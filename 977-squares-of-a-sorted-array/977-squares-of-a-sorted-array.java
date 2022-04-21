@@ -10,5 +10,5 @@ class Solution {
         return res;
     }
 }
-//space complexity
+//space complexity O(n)
 //time complexity   O(n+olog(n))
