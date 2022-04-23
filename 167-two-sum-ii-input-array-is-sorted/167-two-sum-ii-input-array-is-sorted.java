@@ -1,4 +1,5 @@
 class BinarySearch {
+    /*
     public static int binarySearch(int[] arr, int start, int end, int target){
         if(start>end)   return -1;
         int mid = (start+end)/2;
@@ -6,7 +7,7 @@ class BinarySearch {
         if(target>arr[mid]) return binarySearch(arr, mid+1,end, target);
         return binarySearch(arr, start, mid-1, target);
     }
-    /*
+    */
     public static int binarySearch(int[] arr, int start, int end, int target){
         while(true){
             if(start>end)   return -1;
@@ -16,7 +17,7 @@ class BinarySearch {
             else end =  mid-1;
         }
     }
-    */
+
 }
 class Solution {
     public int[] twoSum(int[] nums, int target) {
