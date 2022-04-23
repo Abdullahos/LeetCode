@@ -33,3 +33,5 @@ class Solution {
         return res;
     }
 }
+//space complexity O(1) in case of use iteration, O(log N)
+//time complexity O(n*log n)
