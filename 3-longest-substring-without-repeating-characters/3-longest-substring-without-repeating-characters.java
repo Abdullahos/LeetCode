@@ -3,7 +3,7 @@
 class Solution {
     
     public int lengthOfLongestSubstring(String s) {
-    /*    
+       
         if(s.length()<=1)   return s.length();
         
         List list = new ArrayList<Character>();
@@ -20,7 +20,8 @@ class Solution {
             if(size > max_size) max_size = size;
         }
         return max_size;
-        */
+    
+        /*
         if(s.length()<=1)   return s.length();
         Map m = new HashMap<Character, Integer>();
         int max_size = 0;
@@ -40,7 +41,7 @@ class Solution {
             m = new HashMap<Character, Integer>();
         }
         return max_size;
-        
+        */
     }
     
 }
