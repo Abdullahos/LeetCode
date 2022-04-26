@@ -43,3 +43,5 @@ class Solution {
         return false;
     }
 }
+//time complexity O(N1*N2)
+//space complexity O(1)
