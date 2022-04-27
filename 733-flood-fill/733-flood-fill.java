@@ -19,3 +19,5 @@ class Solution {
         return image;
     }
 }
+//time complexity O(n*m)
+//space complexity O(n*m)
