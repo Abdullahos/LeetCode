@@ -64,3 +64,5 @@ class Solution {
         }
     
 }
+//time complexity O(N)
+//space compelxity O(1)
