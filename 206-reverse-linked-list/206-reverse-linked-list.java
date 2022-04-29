@@ -35,3 +35,5 @@ class Solution {
         return prev;
     }
 }
+//time complexity O(N)
+//space complexity O(1)
