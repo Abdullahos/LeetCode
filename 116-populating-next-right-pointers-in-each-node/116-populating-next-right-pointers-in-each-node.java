@@ -22,29 +22,27 @@ class Node {
 */
 
 class Solution {
-    private Stack<Node>stk = new Stack<Node>();  
-    public Node connect(Node root) {
-        if(root == null)    return null;
-        stk.push(root);
-        while(stk.peek()!=null){
-            ArrayList<Node> list = new ArrayList<Node>();
-            while(!stk.empty()){
-                list.add(stk.pop());
-            }
-            for(int i = list.size()-1; i >= 0 ; i--){
-                Node node = (Node)list.get(i);
-                stk.push(node.right);
-                stk.push(node.left);
-            }
-            Node last = list.get(0);
-            for(int i = 1; i < list.size(); i++){
-                Node next = list.get(i);
-                last.next = next;
-                System.out.println(last.val+" "+next.val );
-                last = next;
-            }
-        }
-        return root;
+    private Stack<Node>stk = new Stack<Node>(); 
+        Queue<Node> q = new LinkedList<Node>();
 
+    public Node connect(Node root) {
+       if(root == null || root.left == null)    return root;
+        q.add(root);
+        int i = 1;
+        while(q.peek()!=null){
+            Node n = q.poll();
+            if((Math.log(i+1)/Math.log(2))%1==0) connect(q,n);
+            q.add(n.left);
+            q.add(n.right);
+            i += 2;
+        } 
+        return root;
+    }
+    public static void connect(Queue<Node> q, Node top){
+        Node p = top;
+        for(Node c : q){        
+            p.next = c;
+            p = c;
+        }   
     }
 }
