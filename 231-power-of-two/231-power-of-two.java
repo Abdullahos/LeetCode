@@ -1,6 +1,16 @@
 class Solution {
-    public boolean isPowerOfTwo(int n) {
-       double res = new Double(String.format("%.10f",Math.log(n)/Math.log(2)));
-       return res%1==0;
+    public boolean isPowerOfTwo(int n) 
+      {
+        long sum = 1; 
+        while( sum < n)
+        {
+            sum = sum * 2;
+        }
+        if( sum == n )
+        {
+            return true;
+        }
+        return false;
     }
+    
 }
