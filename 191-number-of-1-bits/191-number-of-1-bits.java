@@ -1,5 +1,4 @@
 public class Solution {
-    // you need to treat n as an unsigned value
     public int hammingWeight(int n) {
         int k = 0;
         String sn = Integer.toBinaryString(n);
