@@ -4,7 +4,7 @@ class Solution {
         int middle = (start + end) / 2;
 
         if (end < start) {
-            return false;
+           return false;
         }
 
         if (key < array[middle]) {
@@ -39,11 +39,13 @@ class Solution {
         }
 }
 */
+/*
 class Solution {
         public boolean containsDuplicate(int[] nums) {
             if(nums.length <= 1)    return false;
-            LinkedHashSet<Integer> set
-            = new LinkedHashSet<Integer>();
+            Integer[] arr = new Integer[nums.length];
+            System.arraycopy(nums, 0, arr, 0, nums.length); //At least in Java 7.
+            Set<Integer> set = new HashSet<Integer>(Arrays.asList(arr));
  
             // adding elements to LinkedHashSet
             for (int i = 0; i < nums.length; i++)
@@ -52,4 +54,17 @@ class Solution {
             return nums.length != set.size();
             
         }
+}
+
+*/
+class Solution{
+    public boolean containsDuplicate(int[] nums){
+    Set set = new HashSet<Integer>();
+    for(int i = 0; i < nums.length ; i++){
+        if(set.contains(nums[i])) return true;
+        set.add(nums[i]);
+    }
+
+    return false;
+    } 
 }
