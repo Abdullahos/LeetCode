@@ -27,6 +27,7 @@ class Solution {
 //time complexity 	O(n*log(n)) + O(log n) ->  O(n*log n)
 //space complexity  O(log2(n))
 */
+/*
 class Solution {
         public boolean containsDuplicate(int[] nums) {
             if(nums.length <= 1)    return false;
@@ -35,5 +36,20 @@ class Solution {
                 if(nums[i]==nums[i+1])    return true;
             }
             return false;
+        }
+}
+*/
+class Solution {
+        public boolean containsDuplicate(int[] nums) {
+            if(nums.length <= 1)    return false;
+            LinkedHashSet<Integer> set
+            = new LinkedHashSet<Integer>();
+ 
+            // adding elements to LinkedHashSet
+            for (int i = 0; i < nums.length; i++)
+                set.add(nums[i]);
+            
+            return nums.length != set.size();
+            
         }
 }
