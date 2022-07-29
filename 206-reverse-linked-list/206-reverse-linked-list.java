@@ -8,7 +8,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+/*class Solution {
     public ListNode reverseList(ListNode head){
         if(head==null || head.next == null) return head;
         ListNode current = head;
@@ -22,5 +22,20 @@ class Solution {
         return prev;
     }
 }
-//time complexity O(N)
+*/
+//time complexity O(N) 
 //space complexity O(1)
+class Solution {
+        public ListNode reverseList(ListNode head){
+            if(head==null || head.next==null)   return head;
+            ListNode p = null;
+            ListNode n = null;
+            while(head!=null){
+                n = head.next;
+                head.next = p;
+                p = head;
+                head = n;
+            }
+            return p;
+        }
+}
