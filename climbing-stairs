@@ -1,0 +1,14 @@
+class Solution {
+    public int climbStairs(int n) {
+        Integer[] dp = new Integer[n];
+        return climbStairsRec(n,  dp);
+    }
+
+    private int climbStairsRec(int n, Integer[] dp) {
+        if (n <= 1)  return 1;
+        if (n < 0) return 0;
+        if (dp[n-1] != null)  return dp[n-1];
+        dp[n-1] =  climbStairsRec(n-1, dp) + climbStairsRec(n-2, dp);
+        return dp[n-1];
+    }
+}
